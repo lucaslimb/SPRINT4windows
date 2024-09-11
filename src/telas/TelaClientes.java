@@ -83,6 +83,13 @@ public class TelaClientes {
 		frame.getContentPane().add(btnTodos);
 		
 		JButton btnClientesFID = new JButton("");
+		btnClientesFID.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.dispose();
+				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				TelaFidelizados.main(null);
+			}
+		});
 		btnClientesFID.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnClientesFID.setContentAreaFilled(false);
 		btnClientesFID.setBorderPainted(false);

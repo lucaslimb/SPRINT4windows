@@ -8,6 +8,10 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class TelaInicial {
 
@@ -50,6 +54,14 @@ public class TelaInicial {
 		frame.setVisible(true);
 		
 		JButton btnNovaVenda = new JButton("");
+		btnNovaVenda.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				frame.dispose();
+				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				TelaNovaVenda.main(null);
+			}
+		});
 		btnNovaVenda.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnNovaVenda.setContentAreaFilled(false);
 		btnNovaVenda.setBorderPainted(false);
@@ -58,6 +70,13 @@ public class TelaInicial {
 		frame.getContentPane().add(btnNovaVenda);
 				
 				JButton btnRelatorios = new JButton("");
+				btnRelatorios.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						frame.dispose();
+						frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+						TelaRelatorio.main(null);
+					}
+				});
 				btnRelatorios.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 				btnRelatorios.setContentAreaFilled(false);
 				btnRelatorios.setBorderPainted(false);
@@ -66,6 +85,14 @@ public class TelaInicial {
 				frame.getContentPane().add(btnRelatorios);
 				
 				JButton btnInfos = new JButton("");
+				btnInfos.addMouseListener(new MouseAdapter() {
+					@Override
+					public void mouseClicked(MouseEvent e) {
+						frame.dispose();
+						frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+						TelaInfos.main(null);
+					}
+				});
 				btnInfos.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 				btnInfos.setContentAreaFilled(false);
 				btnInfos.setBorderPainted(false);
@@ -74,6 +101,13 @@ public class TelaInicial {
 				frame.getContentPane().add(btnInfos);
 				
 				JButton btnMinhasVendas = new JButton("");
+				btnMinhasVendas.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						frame.dispose();
+						frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+						TelaVendas.main(null);
+					}
+				});
 				btnMinhasVendas.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 				btnMinhasVendas.setContentAreaFilled(false);
 				btnMinhasVendas.setBorderPainted(false);
@@ -82,6 +116,13 @@ public class TelaInicial {
 				frame.getContentPane().add(btnMinhasVendas);
 				
 				JButton btnEstoque = new JButton("");
+				btnEstoque.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						frame.dispose();
+						frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+						TelaEstoque.main(null);
+					}
+				});
 				btnEstoque.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 				btnEstoque.setContentAreaFilled(false);
 				btnEstoque.setBorderPainted(false);
@@ -90,6 +131,13 @@ public class TelaInicial {
 				frame.getContentPane().add(btnEstoque);
 				
 				JButton btnClientes = new JButton("");
+				btnClientes.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						frame.dispose();
+						frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+						TelaClientes.main(null);
+					}
+				});
 				btnClientes.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 				btnClientes.setContentAreaFilled(false);
 				btnClientes.setBorderPainted(false);
@@ -98,6 +146,13 @@ public class TelaInicial {
 				frame.getContentPane().add(btnClientes);
 						
 						JButton btnVoltar = new JButton("");
+						btnVoltar.addActionListener(new ActionListener() {
+							public void actionPerformed(ActionEvent e) {
+								frame.dispose();
+								frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+								TelaLogin.main(null);
+							}
+						});
 						btnVoltar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 						btnVoltar.setContentAreaFilled(false);
 						btnVoltar.setBorderPainted(false);
@@ -106,6 +161,13 @@ public class TelaInicial {
 						frame.getContentPane().add(btnVoltar);
 						
 						JButton btnVerMais = new JButton("");
+						btnVerMais.addActionListener(new ActionListener() {
+							public void actionPerformed(ActionEvent e) {
+								frame.dispose();
+								frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+								TelaVendas.main(null);
+							}
+						});
 						btnVerMais.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 						btnVerMais.setContentAreaFilled(false);
 						btnVerMais.setBorderPainted(false);
@@ -114,6 +176,13 @@ public class TelaInicial {
 						frame.getContentPane().add(btnVerMais);
 						
 						JButton btnEntenda = new JButton("");
+						btnEntenda.addActionListener(new ActionListener() {
+							public void actionPerformed(ActionEvent e) {
+								frame.dispose();
+								frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+								TelaInfos.main(null);
+							}
+						});
 						btnEntenda.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 						btnEntenda.setContentAreaFilled(false);
 						btnEntenda.setBorderPainted(false);
@@ -122,6 +191,13 @@ public class TelaInicial {
 						frame.getContentPane().add(btnEntenda);
 						
 						JButton btnLojaNat = new JButton("");
+						btnLojaNat.addActionListener(new ActionListener() {
+							public void actionPerformed(ActionEvent e) {
+								frame.dispose();
+								frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+								TelaLojaNat.main(null);
+							}
+						});
 						btnLojaNat.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 						btnLojaNat.setContentAreaFilled(false);
 						btnLojaNat.setBorderPainted(false);
