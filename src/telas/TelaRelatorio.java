@@ -17,6 +17,8 @@ import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import java.awt.Cursor;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class TelaRelatorio {
 
@@ -99,6 +101,13 @@ public class TelaRelatorio {
 		frame.getContentPane().add(btnFiltrar);
 		
 		JButton btnVoltar = new JButton("");
+		btnVoltar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.dispose();
+				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				TelaInicial.main(null);
+			}
+		});
 		btnVoltar.setBorder(null);
 		btnVoltar.setBorderPainted(false);
 		btnVoltar.setContentAreaFilled(false);

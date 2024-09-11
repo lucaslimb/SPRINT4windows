@@ -8,6 +8,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JButton;
 import java.awt.Cursor;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class TelaLojaNat {
 
@@ -120,6 +122,13 @@ public class TelaLojaNat {
 		frame.getContentPane().add(btnEnviar);
 		
 		JButton btnVoltar = new JButton("");
+		btnVoltar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				frame.dispose();
+				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+				TelaInicial.main(null);
+			}
+		});
 		btnVoltar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 		btnVoltar.setContentAreaFilled(false);
 		btnVoltar.setBorder(null);
