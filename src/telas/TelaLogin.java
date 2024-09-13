@@ -1,28 +1,31 @@
 package telas;
 
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import java.awt.Toolkit;
-import javax.swing.JLabel;
-import javax.swing.ImageIcon;
-import javax.swing.SwingConstants;
 import java.awt.Color;
-import java.awt.Font;
-import javax.swing.JTextField;
-import javax.swing.JPasswordField;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 import java.awt.Cursor;
-import javax.swing.border.CompoundBorder;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+
+import model.Usuario;
 
 public class TelaLogin {
-
+	private String email = "Monica@natura.com.br";
+	private String senha = "123456";
+	private Usuario usuario = new Usuario(email, senha);
 	private JFrame frame;
 	private JTextField txtEmail;
 	private JPasswordField txtSenha;
@@ -132,9 +135,17 @@ public class TelaLogin {
 		btnEntrar.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				frame.dispose();
-				frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-				TelaInicial.main(null);
+				if(usuario.getEmail().contains(txtEmail.getText())) {
+					if(usuario.getSenha().contains(txtSenha.getText())) {
+						frame.dispose();
+						frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+						TelaInicial.main(null);
+					}else {
+						JOptionPane.showMessageDialog(frame, "Senha Incorreta!");
+					}
+				}else {
+					JOptionPane.showMessageDialog(frame, "Email Incorreto!");
+				}
 			}
 		});
 		btnEntrar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
