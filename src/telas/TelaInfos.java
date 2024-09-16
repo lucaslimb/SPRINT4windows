@@ -138,6 +138,19 @@ public class TelaInfos {
 		btnSaiba.setBounds(1158, 117, 68, 12);
 		frame.getContentPane().add(btnSaiba);
 		
+		ActionListener actionListener = new ActionListener() {
+		    public void actionPerformed(ActionEvent e) {
+		        frame.dispose();
+		        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		        TelaLojaNat.main(null);
+		    }
+		};
+
+		btnProduto1.addActionListener(actionListener);
+		btnProduto2.addActionListener(actionListener);
+		btnProduto3.addActionListener(actionListener);
+		btnProduto4.addActionListener(actionListener);
+		
 		JLabel bg = new JLabel("");
 		bg.setIcon(new ImageIcon(TelaInfos.class.getResource("/imagens/bgInfos.png")));
 		bg.setBounds(0, 0, 1288, 751);

@@ -193,6 +193,7 @@ public class TelaNovaVenda {
 		frame.getContentPane().add(lblCategoria);
 		
 		lblCategoriaR = new JLabel("");
+		lblCategoriaR.setForeground(new Color(128, 255, 0));
 		lblCategoriaR.setHorizontalAlignment(SwingConstants.CENTER);
 		lblCategoriaR.setFont(new Font("Leelawadee UI", Font.PLAIN, 22));
 		lblCategoriaR.setBounds(25, 621, 256, 30);
@@ -260,7 +261,7 @@ public class TelaNovaVenda {
 				int qtd =(int) spinnerQtd.getValue();
 				total = total+ (classePreco[comboBoxProdutos.getSelectedIndex()]*qtd);
 				lblTotal.setText(String.valueOf(total));
-				aux = aux + " " + String.valueOf(qtd) + "x  " + nomes[comboBoxProdutos.getSelectedIndex()];
+				aux = aux + " " + String.valueOf(qtd) + "x " + nomes[comboBoxProdutos.getSelectedIndex()];
 				lblResumo.setText(aux); 
 				
 			}
@@ -296,7 +297,7 @@ public class TelaNovaVenda {
 		lblValorProd = new JLabel("");
 		lblValorProd.setText(String.valueOf(classePreco[0]));
 		lblValorProd.setFont(new Font("Leelawadee UI", Font.PLAIN, 15));
-		lblValorProd.setBounds(1076, 432, 68, 20);
+		lblValorProd.setBounds(1095, 431, 68, 20);
 		
 		frame.getContentPane().add(lblValorProd);
 
@@ -326,22 +327,18 @@ public class TelaNovaVenda {
 		
 		frame.getContentPane().add(comboBoxPagamento);
 
-		// Create the txtCpf JTextField
         JTextField txtCpf = new JTextField();
         txtCpf.setBounds(623, 214, 138, 20);
         txtCpf.setColumns(10);
 
-        // Set initial placeholder for txtCpf
         String placeholderCpf = "12345678900";
         txtCpf.setText("12345678900");
         txtCpf.setForeground(Color.GRAY);
         txtCpf.setFont(txtCpf.getFont().deriveFont(Font.ITALIC));
         
-        // Add FocusListener for txtCpf
         txtCpf.addFocusListener(new FocusAdapter() {
             @Override
             public void focusGained(FocusEvent e) {
-                // Clear placeholder text on focus gained
                 if (txtCpf.getText().equals(placeholderCpf)) {
                     txtCpf.setText("");
                     txtCpf.setForeground(Color.BLACK);
@@ -351,7 +348,6 @@ public class TelaNovaVenda {
 
             @Override
             public void focusLost(FocusEvent e) {
-                // Reset placeholder text on focus lost if the field is empty
                 if (txtCpf.getText().isEmpty()) {
                     txtCpf.setText(placeholderCpf);
                     txtCpf.setForeground(Color.GRAY);
@@ -362,8 +358,6 @@ public class TelaNovaVenda {
         
         txtCpf.setBorder(null);
 
-
-        // Add txtCpf to the frame
         frame.getContentPane().add(txtCpf);
 
 		frame.getContentPane().add(txtCpf);
@@ -401,6 +395,11 @@ public class TelaNovaVenda {
 		});
 		
 		frame.getContentPane().add(btnProcCliente);
+		
+		JLabel lblReais = new JLabel("R$");
+		lblReais.setFont(new Font("Leelawadee UI", Font.PLAIN, 15));
+		lblReais.setBounds(1075, 431, 33, 20);
+		frame.getContentPane().add(lblReais);
 		
 		JLabel bg = new JLabel("");
 		bg.setIcon(new ImageIcon(TelaNovaVenda.class.getResource("/imagens/bgRegistrarVenda.png")));

@@ -23,7 +23,7 @@ import javax.swing.JTextField;
 import model.Usuario;
 
 public class TelaLogin {
-	private String email = "Monica@natura.com.br";
+	private String email = "monica@natura.com.br";
 	private String senha = "123456";
 	private Usuario usuario = new Usuario(email, senha);
 	private JFrame frame;
@@ -106,6 +106,9 @@ public class TelaLogin {
 		String placeholderEmail = "fulano@example.com";
 		txtEmail.setText(placeholderEmail);
 		txtEmail.setForeground(Color.GRAY);
+		
+
+
 
 		txtEmail.addFocusListener(new FocusAdapter() {
 			@Override
@@ -182,5 +185,6 @@ public class TelaLogin {
 		bg.setIcon(new ImageIcon(TelaLogin.class.getResource("/imagens/bgLogin.png")));
 		bg.setBounds(0, 0, 1288, 751);
 		frame.getContentPane().add(bg);
+		bg.requestFocusInWindow();
 	}
 }

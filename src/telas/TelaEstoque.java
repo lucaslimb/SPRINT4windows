@@ -1,16 +1,16 @@
 package telas;
 
+import java.awt.Cursor;
 import java.awt.EventQueue;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
+import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JButton;
-import java.awt.Cursor;
-import java.awt.Desktop;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 
 public class TelaEstoque {
 
@@ -146,6 +146,24 @@ public class TelaEstoque {
 		btnScroll.setBorder(null);
 		btnScroll.setBounds(1240, 211, 18, 270);
 		frame.getContentPane().add(btnScroll);
+		
+		ActionListener actionListener = new ActionListener() {
+		    public void actionPerformed(ActionEvent e) {
+		        frame.dispose();
+		        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		        TelaLojaNat.main(null);
+		    }
+		};
+
+		btnCarrinho1.addActionListener(actionListener);
+		btnCarrinho2.addActionListener(actionListener);
+		btnCarrinho3.addActionListener(actionListener);
+		btnCarrinho4.addActionListener(actionListener);
+		btnCarrinho5.addActionListener(actionListener);
+		btnCarrinho6.addActionListener(actionListener);
+		btnCarrinho7.addActionListener(actionListener);
+		btnCarrinho8.addActionListener(actionListener);
+		btnLoja.addActionListener(actionListener);
 		
 		JLabel bg = new JLabel("");
 		bg.setIcon(new ImageIcon(TelaEstoque.class.getResource("/imagens/bgEstoque.png")));
