@@ -70,7 +70,7 @@ public class TelaLogin {
 		frame.setVisible(true);
 
 		txtSenha = new JPasswordField();
-		String placeholderSenha = "Digite sua senha...";
+		String placeholderSenha = "Digite sua senha";
 		txtSenha.setText(placeholderSenha);
 		txtSenha.setForeground(Color.GRAY);
 		txtSenha.setEchoChar((char) 0);
@@ -97,13 +97,12 @@ public class TelaLogin {
 
 		txtSenha.setFont(new Font("Leelawadee UI", Font.ITALIC, 30));
 		txtSenha.setOpaque(false);
-		txtSenha.setEchoChar('*');
 		txtSenha.setBorder(null);
 		txtSenha.setBounds(224, 417, 855, 46);
 		frame.getContentPane().add(txtSenha);
 
 		txtEmail = new JTextField();
-		String placeholderEmail = "fulano@example.com";
+		String placeholderEmail = "Digite seu email ou CPF";
 		txtEmail.setText(placeholderEmail);
 		txtEmail.setForeground(Color.GRAY);
 		
